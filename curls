@@ -1,0 +1,17 @@
+# 1. create user 1
+curl -X POST localhost:8080/developers -H 'Content-type:application/json' -d '{"registeredAt": "2021-05-10T11:00:01-05:00", "firstName": "Alice", "lastName": "Smith", "instagramNsername": "alicesmith", "twitterUsername": "alicelovescoding", "devEnv": "Visual Studio Code/Javascript", "location": "Austix, TX"}'
+
+# 2. create user 2
+curl -X POST localhost:8080/developers -H 'Content-type:application/json' -d '{"registeredAt": "2021-05-20T09:00:01-05:00", "firstName": "Tom", "lastName": "Carpenter", "instagramNsername": "tomcar", "twitterUsername": "tomtt", "devEnv": "Intellij/Javascript", "location": "San Jose, CA"}'
+
+# 3. create user 3
+curl -X POST localhost:8080/developers -H 'Content-type:application/json' -d '{"registeredAt": "2021-05-20T01:00:01-01:00", "firstName": "Joe", "lastName": "Carpenter", "instagramNsername": "joecar", "twitterUsername": "joecart", "devEnv": "Eclipse/Mac", "location": "Milpitus, CA"}'
+
+# 4. retrieve all users
+curl -v localhost:8080/developers
+
+# 5. change user 3's name to Jerry
+curl -X PUT localhost:8080/developers/3 -H 'Content-type:application/json' -d '{"registeredAt": "2021-05-20T01:00:01-01:00", "firstName": "Jerry", "lastName": "Carpenter", "instagramNsername": "joecar", "twitterUsername": "joecart", "devEnv": "Eclipse/Mac", "location": "Milpitus, CA"}'
+
+# 6. delete user 3
+curl -X DELETE localhost:8080/developers/3
