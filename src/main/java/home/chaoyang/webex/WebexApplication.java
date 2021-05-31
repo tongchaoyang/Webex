@@ -8,6 +8,7 @@ public class WebexApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(WebexApplication.class, args);
+		
 	}
 
 }

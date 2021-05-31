@@ -3,12 +3,13 @@ package home.chaoyang.webex;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,20 +19,19 @@ import lombok.Setter;
 @Getter @Setter @NoArgsConstructor 
 public class Developer implements Serializable {
     private @Id @GeneratedValue Long id;
-    @Column(name="first_name", length=50, nullable=false)
+    @JsonProperty("first_name")
     private String firstName;
-    @Column(name="last_name", length=50, nullable=false)
+    @JsonProperty("last_name")
     private String lastName;
-    @Column(name="instagram_username", length=50, nullable=true)
+    @JsonProperty("instagram_username")
     private String instagramUsername;
-    @Column(name="twitter_username", length=50, nullable=true)
+    @JsonProperty("twitter_username")
     private String twitterUsername;
-    @Column(name="dev_env", length=100, nullable=true)
+    @JsonProperty("dev_env")
     private String devEnv;
-    @Column(length=100, nullable=false)
     private String location;
-    @Column(name="registered_at")
     @Temporal(TemporalType.DATE)
+    @JsonProperty("registered_at")
     private Date registeredAt;
     
     public Developer(String fn, String ln, String in, String tn, 
