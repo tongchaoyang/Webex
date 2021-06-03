@@ -15,3 +15,10 @@ curl -X PUT localhost:8080/developers/3 -H 'Content-type:application/json' -d '{
 
 # 6. delete user 3
 curl -X DELETE localhost:8080/developers/3
+
+# 7. patch user 2
+curl -X PATCH localhost:8080/developers/2 -H 'Content-type:application/json' -d '{"first_name": "Jack", "last_name": "Copper"}'
+
+curl -X PATCH localhost:8080/developers/2 -H 'Content-type:application/json' -d '{"registered_at": "2021-06-02T09:00:01-05:00", "instagram_username": "jackc", "twitter_username": "jackt"}'
+
+curl -X PATCH localhost:8080/developers/2 -H 'Content-type:application/json' -d '{"dev_env": "Eclipse/Javascript", "location": "Dublin, CA"}'

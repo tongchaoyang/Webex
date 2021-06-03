@@ -1,13 +1,11 @@
 package home.chaoyang.webex;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.Instant;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -30,12 +28,11 @@ public class Developer implements Serializable {
     @JsonProperty("dev_env")
     private String devEnv;
     private String location;
-    @Temporal(TemporalType.DATE)
     @JsonProperty("registered_at")
-    private Date registeredAt;
+    private Instant registeredAt;
     
     public Developer(String fn, String ln, String in, String tn, 
-            String env, String loc, Date at) {
+            String env, String loc, Instant at) {
         this.firstName = fn;
         this.lastName = ln;
         this.instagramUsername = in;
